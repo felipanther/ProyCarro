@@ -20,6 +20,8 @@ public class Carro {
     }
 
     public void setVelocidad(int velocidad){
+        if (velocidad < 0)
+            velocidad = 0;
         this.velocidad = velocidad;
     }
     /*
