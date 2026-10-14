@@ -3,6 +3,10 @@ package negocio;
 public class Carro {
     private int potencia;
     private double velocidad;
+    // atributo de clase
+    private static int numCarros = 0;
+    //constante de la clase
+    private static final double IVA = 0.15;
 
     public Carro(int potencia, double velocidad){
         /*this.potencia = potencia;
@@ -10,10 +14,11 @@ public class Carro {
         //si los datos tienen validaciones utilizo el set
         setPotencia(potencia);
         setVelocidad(velocidad);
+        numCarros++;
     }
 
     public Carro() {
-
+        numCarros++;
     }
 
     /*
@@ -51,7 +56,19 @@ public class Carro {
         return velocidad;
     }
 
-    void acelerar(){
+    public static int getNumCarros(){
+        return numCarros;
+    }
+
+    public static double getIva(){
+        return IVA;
+    }
+
+    public double calcularPrecioTotal(double precio){
+        return precio + (precio * IVA);
+    }
+
+    public void acelerar(){
         velocidad += potencia;
     }
     void frenar(){
