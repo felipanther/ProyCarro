@@ -4,6 +4,18 @@ public class Carro {
     private int potencia;
     private double velocidad;
 
+    public Carro(int potencia, double velocidad){
+        /*this.potencia = potencia;
+        this.velocidad = velocidad;*/
+        //si los datos tienen validaciones utilizo el set
+        setPotencia(potencia);
+        setVelocidad(velocidad);
+    }
+
+    public Carro() {
+
+    }
+
     /*
     ingreso de informacion
     metodos set()
@@ -19,7 +31,7 @@ public class Carro {
             this.potencia = potencia;
     }
 
-    public void setVelocidad(int velocidad){
+    public void setVelocidad(double velocidad){
         if (velocidad < 0)
             velocidad = 0;
         this.velocidad = velocidad;
